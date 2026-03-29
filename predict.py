@@ -4,8 +4,8 @@ Sports Betting Prediction Model.
 THIS IS THE FILE THE AUTORESEARCH AGENT MODIFIES.
 ═══════════════════════════════════════════════════════════════════════════
 
-Current strategy: XGBoost with stronger regularization. Only bet on the
-single best value outcome per match. MIN_EDGE=0.08 to be more selective.
+Current strategy: XGBoost with reduced feature set (drop noisy scoring stats).
+Focus on odds-derived + form features. MIN_EDGE=0.10 for high selectivity.
 """
 
 import numpy as np
@@ -19,21 +19,12 @@ def get_feature_columns() -> list[str]:
         "implied_prob_away",
         "home_form_5",
         "away_form_5",
-        "home_form_10",
-        "away_form_10",
         "form_diff_5",
         "form_diff_10",
         "h2h_home_ratio",
         "h2h_away_ratio",
-        "home_avg_scored",
-        "home_avg_conceded",
-        "away_avg_scored",
-        "away_avg_conceded",
-        "home_goal_diff",
-        "away_goal_diff",
-        "scoring_diff",
-        "rest_advantage",
         "odds_ratio",
+        "rest_advantage",
     ]
 
 
@@ -81,7 +72,7 @@ def predict_probabilities(
 
 
 # Only bet when we have a strong edge
-MIN_EDGE = 0.08
+MIN_EDGE = 0.10
 
 def get_bet_recommendations(
     probs: dict[str, float],
