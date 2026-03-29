@@ -72,7 +72,7 @@ def predict_probabilities(
 
 
 # Only bet when we have a strong edge
-MIN_EDGE = 0.10
+MIN_EDGE = 0.15
 
 def get_bet_recommendations(
     probs: dict[str, float],
