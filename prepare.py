@@ -153,6 +153,18 @@ TEAMS = {
         "Senators", "Predators", "Blues", "Flyers", "Coyotes", "Ducks",
         "Blackhawks", "Sharks", "Blue Jackets", "Canadiens",
     ],
+    "soccer_mexico_ligamx": [
+        "Club America", "Guadalajara", "Cruz Azul", "Pumas UNAM", "Tigres UANL",
+        "Monterrey", "Santos Laguna", "Leon", "Toluca", "Pachuca",
+        "Atlas", "Necaxa", "Puebla", "Queretaro", "Tijuana",
+        "Mazatlan", "Juarez", "San Luis", "MX-Team-19", "MX-Team-20",
+    ],
+    "soccer_mexico_ligamx_femenil": [
+        "America Fem", "Guadalajara Fem", "Tigres Fem", "Monterrey Fem",
+        "Cruz Azul Fem", "Pumas Fem", "Toluca Fem", "Pachuca Fem",
+        "Atlas Fem", "Leon Fem", "Santos Fem", "Necaxa Fem",
+        "Puebla Fem", "Queretaro Fem", "Tijuana Fem", "Mazatlan Fem",
+    ],
 }
 
 
