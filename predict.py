@@ -73,13 +73,14 @@ def predict_probabilities(
 
 # Only bet when we have a strong edge
 MIN_EDGE = 0.15
+MAX_EDGE = 0.35  # Cap unrealistic edges (likely model error)
 
 def get_bet_recommendations(
     probs: dict[str, float],
     odds: dict[str, float],
     outcomes: list[str],
 ) -> list[dict]:
-    """Only bet on the single best value outcome per match."""
+    """Only bet on the single best value outcome. Cap unrealistic edges."""
     best = None
     best_edge = 0.0
 
@@ -96,7 +97,8 @@ def get_bet_recommendations(
         implied_prob = 1.0 / decimal_odds
         edge = model_prob - implied_prob
 
-        if edge >= MIN_EDGE and edge > best_edge:
+        # Skip unrealistically large edges (likely model overconfidence)
+        if edge >= MIN_EDGE and edge < MAX_EDGE and edge > best_edge:
             best_edge = edge
             best = {
                 "outcome": outcome,
