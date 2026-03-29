@@ -1,0 +1,36 @@
+# Data (too large for git)
+data/raw/
+data/processed/
+
+# Keep directory structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Logs
+*.log
+run.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
