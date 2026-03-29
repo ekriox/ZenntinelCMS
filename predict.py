@@ -25,6 +25,7 @@ def get_feature_columns() -> list[str]:
         "h2h_away_ratio",
         "odds_ratio",
         "rest_advantage",
+        "scoring_diff",
     ]
 
 
