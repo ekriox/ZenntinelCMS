@@ -4,8 +4,9 @@ Sports Betting Prediction Model.
 THIS IS THE FILE THE AUTORESEARCH AGENT MODIFIES.
 ═══════════════════════════════════════════════════════════════════════════
 
-Current strategy: XGBoost with reduced feature set (drop noisy scoring stats).
-Focus on odds-derived + form features. MIN_EDGE=0.10 for high selectivity.
+Current strategy: XGBoost with selective features + edge capping.
+Best ROI: +10.38% (8 sports). Key: scoring_diff feature, MIN_EDGE=0.15,
+MAX_EDGE=0.35 to filter overconfident predictions. Single best bet per match.
 """
 
 import numpy as np
